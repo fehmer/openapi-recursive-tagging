@@ -10,7 +10,7 @@
   "keywords": [],
   "author": "Christian Fehmer",
   "license": "BSD-3-Clause",
-   "repository": {
+  "repository": {
     "type": "git",
     "url": "git+https://github.com/fehmer/openapi-recursive-tagging.git"
   },
