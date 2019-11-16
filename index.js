@@ -13,10 +13,10 @@ function process(src, options) {
     return src;
 };
 
-function handle(src, obj){
+function handle(src, obj) {
     recurse(obj,{},function(rec,key,state) {
         handleTags(src, rec);
-            if(rec["$ref"]){
+            if(rec["$ref"]) {
                 let path = rec["$ref"].substring(2).split('/');
                 let reference = src;
                 path.forEach(p => reference=reference[p]);
@@ -27,17 +27,19 @@ function handle(src, obj){
 }
 
 
-function handleTags(src, obj){
-    if(obj.tags){
+function handleTags(src, obj) {
+    if(obj.tags) {
         obj.tags.forEach(activeTag => {
-
-            src.tags
-                .filter(tag => tag.name == activeTag)
-                .forEach(tag => mark(tag) );
-
-            src["x-tagGroups"]
-                .filter(group => group.tags.includes(activeTag))
-                .forEach(group => mark(group) );
+            if(src.tags) {
+                src.tags
+                    .filter(tag => tag.name == activeTag)
+                    .forEach(tag => mark(tag) );
+            }
+            if(src["x-tagGroups"]) {
+                 src["x-tagGroups"]
+                    .filter(group => group.tags.includes(activeTag))
+                    .forEach(group => mark(group) );
+            }
         });
     }
 }
