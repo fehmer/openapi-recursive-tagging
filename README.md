@@ -1,1 +1,3 @@
-# fehmer-openapi-recursive-tagging
+# openapi-recursive-tagging
+
+Experimental, don't use me.
