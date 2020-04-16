@@ -19,7 +19,7 @@ function handle(src, obj) {
             if(rec["$ref"]) {
                 let path = rec["$ref"].substring(2).split('/');
                 let reference = src;
-                path.forEach(p => reference=reference[p]);
+                path.forEach(p => reference=reference[p.replace(/~1/g, '/')]);
                 mark(reference)
                 handle(src, reference);
             }

@@ -16,7 +16,9 @@ let argv = require('yargs')
     .argv;
 
 let s = fs.readFileSync(argv._[0],'utf8');
-let obj = yaml.parse(s);
+let obj = yaml.parse(s, {
+    maxAliasCount: -1
+});
 
 let res = tagger.process(obj,argv);
 
