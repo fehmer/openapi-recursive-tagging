@@ -1,6 +1,6 @@
 {
   "name": "openapi-recursive-tagging",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Tag downstream references of openAPI path definitions with the parent tags",
   "main": "openapi-recursive-tagging.js",
   "bin": "openapi-recursive-tagging.js",

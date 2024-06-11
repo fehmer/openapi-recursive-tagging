@@ -28,7 +28,8 @@ function handle(src, obj) {
 
 
 function handleTags(src, obj) {
-    if(obj.tags) {
+    
+    if(obj.tags!== undefined  && Array.isArray(obj.tags)) {
         obj.tags.forEach(activeTag => {
             if(src.tags) {
                 src.tags
